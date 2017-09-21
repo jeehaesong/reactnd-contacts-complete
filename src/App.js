@@ -32,7 +32,7 @@ class App extends Component {
   CreateContact(contact) {
     ContactsAPI.create(contact).then(contact => {
       this.setState(state => ({
-        contact: state.contacts.concat( [contact])
+        contacts: state.contacts.concat( [contact])
       }))
     })
   }
