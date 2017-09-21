@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
-=======
-import React, {Component} from 'react'
-import {Link} from 'react-router-dom'
->>>>>>> 2ba35f067cc841e5e4fbb20b0194ebfa3213ec5c
 import ImageInput from './ImageInput'
 import serializeForm from 'form-serialize'
 
