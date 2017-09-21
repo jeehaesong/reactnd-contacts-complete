@@ -44,8 +44,6 @@ class App extends Component {
           <ListContacts
             onDeleteContact={this.removeContact}
             contacts = {this.state.contacts}
-            onNavigate={ ()=>{ this.setState({screen: 'create'})
-          }}
           />
       )}/>
     <Route path="/create" render = { ( { history } )=> (
