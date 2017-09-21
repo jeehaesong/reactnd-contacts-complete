@@ -1,5 +1,4 @@
-import React, { Component } from 'react'
-import { Route } from 'react-router-dom'
+import React, { Component } from 'react';
 import ListContacts from './ListContacts'
 import CreateContact  from './CreateContact'
 import * as ContactsAPI from './utils/ContactsAPI'
@@ -8,7 +7,7 @@ class App extends Component {
   //add state inside of App components.
   // this way, react know the changes of this array.
   state ={
-    // screen: 'list', //list, create
+    screen: 'list', //list, create
     contacts : []
   }
 
@@ -31,15 +30,17 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        <Route exact path="/" render={ ()=>{
-          <ListContacts
-            onDeleteContact={this.removeContact}
-            contacts = {this.state.contacts}
-            onNavigate={ ()=>{ this.setState({screen: 'create'})
+        {this.state.screen === 'list' &&(
+          <ListContacts onDeleteContact={this.removeContact}
+          contacts = {this.state.contacts}
+          onNavigate={ ()=>{
+            this.setState({screen: 'create'})
           }}
-          />
-        }}/>
-      <Route path="/create" component ={CreateContact}/>
+            />
+        )}
+        {this.state.screen === 'create' &&(
+          <CreateContact/>
+        )}
       </div>
     )
   }
